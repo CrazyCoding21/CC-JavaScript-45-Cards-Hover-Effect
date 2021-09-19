@@ -1,0 +1,99 @@
+body {
+	display: flex;
+	justify-content: center;
+    align-items: center;
+	min-height: 100vh;
+	background: #68ca2f;
+}
+
+div {
+	width: 20vw;
+	max-width: 250px;
+	height: 75vh;
+	background: red;
+	background-size: auto 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin: 0 0.5rem;
+	filter: grayscale(1) opacity(0.1) contrast(200%);
+	transition: 0.5s;
+	transform: skewY(-10deg);
+	z-index: -1;
+}
+
+.highlight {
+	filter: grayscale(0) opacity(1);
+	transform: scale(1.1);
+	box-shadow: 0 25px 50px black;
+	z-index: 100;
+}
+
+@media (orientation: portrait) {
+    body{
+        flex-direction: column;
+    }
+	div {
+		width: 75vw;
+		max-width: 75vw;
+		height: 20vh;
+		display: block;
+		margin: 1rem 0;
+		background-size: 100% auto;
+		background-position: 50% 0%;
+		transform: skewX(-10deg);
+	}
+	div:nth-child(3) {
+		background-position: 50% 20%;
+	}
+	div:nth-child(4) {
+		background-position: 50% 10%;
+	}
+}
+
+div:nth-child(1) {
+	background-color: dodgerblue;
+	background-image: url("../images/1.png");
+}
+
+div:nth-child(2) {
+	background-color: darkorange;
+	background-image: url("../images/2.png");
+}
+div:nth-child(3) {
+	background-color: red;
+	background-image: url("../images/3.png");
+}
+div:nth-child(4) {
+	background-color: purple;
+	background-image: url("../images/4.png");
+}
+
+div:nth-child(1):after,
+div:nth-child(2):after,
+div:nth-child(3):after,
+div:nth-child(4):after {
+	content: "NAME";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 60px;
+	font-weight: 900;
+	color: white;
+	text-shadow: 3px 3px #555;
+}
+div:nth-child(1):after {
+	content: "LEO";
+}
+div:nth-child(2):after {
+	content: "MIKE";
+}
+div:nth-child(3):after {
+	content: "RAPH";
+}
+div:nth-child(4):after {
+	content: "DON";
+}
+
